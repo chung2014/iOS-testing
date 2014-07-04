@@ -12,6 +12,7 @@
 		1F2015B4195ED5380068566B /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2015B3195ED5380068566B /* LibraryAPI.m */; };
 		1F2015B7195EDECF0068566B /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2015B6195EDECF0068566B /* PersistencyManager.m */; };
 		1F9283F9195EF9E600ACAE48 /* Album+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9283F8195EF9E600ACAE48 /* Album+TableRepresentation.m */; };
+		1FB4886A1965ABAA00B5B591 /* Memento.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB488691965ABAA00B5B591 /* Memento.m */; };
 		1FB60F641961B10F00EF450E /* HorizontalScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB60F631961B10F00EF450E /* HorizontalScroller.m */; };
 		450EECC017A9B03A00957F62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450EECBF17A9B03A00957F62 /* UIKit.framework */; };
 		450EECC217A9B03A00957F62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450EECC117A9B03A00957F62 /* Foundation.framework */; };
@@ -37,6 +38,9 @@
 		1F2015B6195EDECF0068566B /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		1F9283F7195EF9E600ACAE48 /* Album+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+TableRepresentation.h"; sourceTree = "<group>"; };
 		1F9283F8195EF9E600ACAE48 /* Album+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+TableRepresentation.m"; sourceTree = "<group>"; };
+		1FB488681965ABAA00B5B591 /* Memento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memento.h; sourceTree = "<group>"; };
+		1FB488691965ABAA00B5B591 /* Memento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memento.m; sourceTree = "<group>"; };
+		1FB4886B1965ADF500B5B591 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		1FB60F621961B10F00EF450E /* HorizontalScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScroller.h; sourceTree = "<group>"; };
 		1FB60F631961B10F00EF450E /* HorizontalScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScroller.m; sourceTree = "<group>"; };
 		450EECBC17A9B03A00957F62 /* BlueLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,8 @@
 			children = (
 				1F2015A9195ECC490068566B /* Album.h */,
 				1F2015AA195ECC490068566B /* Album.m */,
+				1FB488681965ABAA00B5B591 /* Memento.h */,
+				1FB488691965ABAA00B5B591 /* Memento.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 				450EECD117A9B03A00957F62 /* Default.png */,
 				450EECD317A9B03A00957F62 /* Default@2x.png */,
 				450EECD517A9B03A00957F62 /* Default-568h@2x.png */,
+				1FB4886B1965ADF500B5B591 /* Common.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 				1F2015B4195ED5380068566B /* LibraryAPI.m in Sources */,
 				1FB60F641961B10F00EF450E /* HorizontalScroller.m in Sources */,
 				450EECD917A9B03A00957F62 /* ViewController.m in Sources */,
+				1FB4886A1965ABAA00B5B591 /* Memento.m in Sources */,
 				1F9283F9195EF9E600ACAE48 /* Album+TableRepresentation.m in Sources */,
 				1F2015AB195ECC490068566B /* Album.m in Sources */,
 				450EECE517A9B05E00957F62 /* HTTPClient.m in Sources */,

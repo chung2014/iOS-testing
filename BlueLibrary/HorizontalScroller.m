@@ -86,6 +86,7 @@
         int initialView = [self.delegate initialViewIndexForHorizontalScroller:self];
         [scroller setContentOffset:CGPointMake(initialView * (VIEW_DIMENSIONS + 2 * VIEW_PADDING), 0) animated:YES];
     }
+    //[scroller setContentOffset:CGPointMake(3 * (VIEW_DIMENSIONS + 2 * VIEW_PADDING), 0) animated:YES];
 }
 
 - (void)didMoveToSuperview
@@ -96,9 +97,9 @@
 - (void)centerCurrentView
 {
     int xFinal = scroller.contentOffset.x + (VIEWS_OFFSET/2) + VIEW_PADDING;
-    int viewIndex = xFinal / (VIEWS_OFFSET + (2 * VIEW_PADDING));
-    xFinal = viewIndex * (VIEW_DIMENSIONS + (2*VIEW_PADDING));
-    [scroller setContentOffset:CGPointMake(xFinal, 0) animated:YES];
+    int viewIndex = xFinal / (VIEW_DIMENSIONS+(2*VIEW_PADDING));
+    xFinal = viewIndex * (VIEW_DIMENSIONS+(2*VIEW_PADDING));
+    [scroller setContentOffset:CGPointMake(xFinal,0) animated:YES];
     [self.delegate horizontalScroller:self clickedViewAtIndex:viewIndex];
 }
 

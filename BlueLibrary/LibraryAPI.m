@@ -28,9 +28,16 @@
         persistencyManager = [[PersistencyManager alloc] init];
         httpClient = [[HTTPClient alloc] init];
         isOnline = NO;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadImage:) name:@"BLDownloadImageNotification" object:nil];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 + (LibraryAPI *)sharedInstance
@@ -47,6 +54,40 @@
     });
     
     return _shareInstance;
+}
+
+
+
+#pragma mark - Notification Callback
+#pragma mark - When a download event is just fired
+- (void)downloadImage:(NSNotification *)notification
+{
+    //1
+    //@{@"imageView":coverImage, @"coverUrl":albumCover}]
+    UIImageView *imageView = notification.userInfo[@"imageView"];
+    NSString *coverUrl = notification.userInfo[@"coverUrl"];
+    
+    //2
+    imageView.image = [persistencyManager getImage:[coverUrl lastPathComponent]];
+    
+    if (imageView.image == nil) {
+        //3
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UIImage *image = [httpClient downloadImage:coverUrl];
+            
+            //4
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                imageView.image = image;
+                [persistencyManager saveImage:image filename:[coverUrl lastPathComponent]];
+            });
+        });
+    }
+}
+
+#pragma mark - Facade again
+- (void)saveAlbums
+{
+    [persistencyManager saveAlbums];
 }
 
 - (NSArray *)getAlbums
